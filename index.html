@@ -19,19 +19,19 @@
     <link href="./assests/css/style.css" rel="stylesheet" />
     <link
       rel="shortcut icon"
-      href=".\assests\images\logo.webp"
+      href="./assests/images/logos/logo-gold.png"
       type="image/x-icon"
     />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-main">
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="#">
           <img
-            src="./assests/images/logo.webp"
+            src="./assests/images/logos/logo-gold.png"
             height="80"
             alt="website logo"
           />
@@ -79,34 +79,14 @@
               placeholder="Type query"
               aria-label="Search"
             />
-            <button
-              class="btn btn-outline-primary"
-              type="button"
-              data-mdb-ripple-init
-              data-mdb-ripple-color="dark"
-              style="padding: 0.45rem 1.5rem 0.35rem"
-            >
-              Search
-            </button>
+            <button class="btn-search" type="button">Search</button>
           </form>
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item d-none" id="nav-user">
               <a class="nav-link" href="profile.html"></a>
             </li>
             <!-- Navbar dropdown -->
-            <li class="nav-item dropdown">
-              <!-- <a
-                class="nav-link dropdown-toggle hidden-arrow"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-dropdown-init
-                aria-expanded="false"
-              >
-                <i class="fas fa-bell"></i>
-              </a> -->
-              <!-- Dropdown menu -->
-            </li>
+            <li class="nav-item dropdown"></li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
@@ -116,50 +96,8 @@
                 data-mdb-dropdown-init
                 aria-expanded="false"
               >
-                <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
-                  class="rounded-circle img-fluid"
-                  height="25"
-                  width="25"
-                />
+                <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
               </a>
-              <!-- Dropdown menu -->
-              <!-- <ul
-                class="dropdown-menu dropdown-menu-end p-1"
-                aria-labelledby="navbarDropdown"
-              >
-                <li class="my-2 d-flex align-items-center">
-                  <img
-                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg"
-                    class="rounded-circle img-fluid me-1"
-                    height="25"
-                    width="25"
-                  /><span> User 1</span>
-                </li>
-                <li class="my-2 d-flex align-items-center">
-                  <img
-                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg"
-                    class="rounded-circle img-fluid me-1"
-                    height="25"
-                    width="25"
-                  /><span> User 2</span>
-                </li>
-                <li class="my-2 d-flex align-items-center">
-                  <img
-                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg"
-                    class="rounded-circle img-fluid me-1"
-                    height="25"
-                    width="25"
-                  /><span> User 3</span>
-                </li>
-                <li><a class="dropdown-item" href="#">Manage Profiles</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Your Account</a></li>
-                <li><a class="dropdown-item" href="#">Help</a></li>
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
-              </ul> -->
             </li>
           </ul>
         </div>
@@ -168,6 +106,7 @@
       <!-- Container wrapper -->
     </nav>
 
+    <section style="height: 100vh"></section>
     <!-- NavBar -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <a class="navbar-brand" href="index.html">Time Machine</a>
@@ -193,7 +132,7 @@
     </div> -->
 
     <!-- Newsletter Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 newsletter-section">
       <div class="container">
         <div class="row align-items-center">
           <!-- Text Column -->
@@ -216,7 +155,9 @@
                   aria-label="Email Address"
                   required
                 />
-                <button class="btn btn-primary" type="submit">Subscribe</button>
+                <button class="btn btn-subscribe" type="submit">
+                  Subscribe
+                </button>
               </div>
             </form>
             <!-- Privacy Checkbox -->
@@ -238,7 +179,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-light text-dark pt-5">
+    <footer class="footer-theme pt-5">
       <div class="container">
         <div class="row g-4">
           <!-- Column 1 -->

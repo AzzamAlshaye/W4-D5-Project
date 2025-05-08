@@ -4,13 +4,60 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
+
+  background-color: #efe3cd;
   margin-top: 5rem;
 }
 
-.navbar-brand {
-  font-weight: bold;
+/* nav css start  */
+/* 1. Navbar background */
+.navbar-main {
+  background-color: #2c3b33; /* Dark Teal */
 }
+
+/* 2. Link colors */
+.navbar-main .nav-link {
+  color: #fcf6e9; /* Cream */
+}
+.navbar-main .nav-link:hover,
+.navbar-main .nav-link.active {
+  color: #eec263 !important; /* Mustard */
+}
+
+/* 3. Toggler color */
+.navbar-main .navbar-toggler {
+  border-color: #f9edd2;
+}
+.navbar-main .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* 4. Search box styling */
+.navbar-main .input-group .form-control {
+  background-color: #f2eadc; /* Off-White */
+  border: 1px solid #b18d30; /* Mustard */
+  color: #2c3b33; /* Dark Teal */
+}
+.navbar-main .input-group .form-control::placeholder {
+  color: #2c3b33;
+  opacity: 0.7;
+}
+
+/* 5. Search button */
+.btn-search {
+  background-color: #c78f00;
+  color: #000000; /* Dark Teal */
+  border: 1px solid #aa7a00;
+  padding: 0.45rem 1.5rem 0.35rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.2s;
+}
+.btn-search:hover {
+  background-color: #caa13a; /* Burnt Orange */
+  color: #0f0f0f; /* Cream */
+}
+
+/* nav css end  */
 
 .container {
   max-width: 960px;
@@ -65,60 +112,93 @@ body {
   left: 0;
 }
 
-/* --- Footer --- */
-.footer {
-  background-color: #f2f3f6;
-  color: #000000;
-  padding-top: 60px;
-  font-size: 0.9rem;
+/* -------------------------------
+   Newsletter Section
+---------------------------------*/
+/* 1. Section background */
+.newsletter-section {
+  background-color: #2c3b33; /* Dark Teal */
 }
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  margin-bottom: 50px;
+
+/* 2. Headings & text */
+.newsletter-section h2.h3,
+.newsletter-section p,
+.newsletter-section .form-check-label {
+  color: #f5e2b8; /* Cream */
 }
-.footer-column h4 {
-  color: #000000;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+
+/* 3. Form control (email input) */
+.newsletter-section .form-control {
+  background-color: #efe3cd; /* Off-White */
+  border: 1px solid #b18d30; /* Mustard */
+  color: #2c3b33; /* Dark Teal */
 }
-.footer-column ul li {
-  margin-bottom: 12px;
+.newsletter-section .form-control::placeholder {
+  color: #2c3b33;
+  opacity: 0.7;
 }
-.footer-column a {
-  color: #505050;
+
+/* 4. Subscribe button */
+.btn-subscribe {
+  background-color: #b18d30; /* Mustard */
+  color: #2c3b33; /* Dark Teal */
+  border: 1px solid #aa7a00;
+  padding: 0.45rem 1.5rem 0.35rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-subscribe:hover {
+  background-color: #aa7a00; /* Burnt Orange */
+  color: #f5e2b8; /* Cream */
+}
+
+/* 5. Checkbox styling */
+.newsletter-section .form-check-input {
+  border: 1px solid #f5e2b8; /* Cream */
+}
+.newsletter-section .form-check-input:checked {
+  background-color: #b18d30; /* Mustard */
+  border-color: #b18d30;
+}
+.newsletter-section .form-check-label a {
+  color: #b18d30; /* Mustard link */
+}
+.newsletter-section .form-check-label a:hover {
+  color: #aa7a00; /* Burnt Orange on hover */
+}
+
+/* -------------------------------
+     Footer
+  ---------------------------------*/
+/* 1. Footer background & base text */
+.footer-theme {
+  background-color: #2c3b33; /* Dark Teal */
+  color: #f5e2b8; /* Cream */
+}
+
+/* 2. Footer links */
+.footer-theme a {
+  color: #f5e2b8; /* Cream */
   text-decoration: none;
 }
-.footer-column a:hover {
-  color: #ffffff;
-  text-decoration: none;
+.footer-theme a:hover {
+  color: #b18d30; /* Mustard */
 }
-.footer-bottom {
-  border-top: 1px solid #d8d6d6;
-  padding: 30px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
+
+/* 3. Border-top on the bottom bar */
+.footer-theme .border-top {
+  border-color: #b18d30 !important; /* Mustard */
 }
-.copyright {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-bottom: 0;
+
+/* 4. “small text-muted” override */
+.footer-theme .text-muted {
+  color: #efe3cd !important; /* Off-White */
 }
-.social-icons a {
-  color: #9ca3af;
-  font-size: 1.1rem;
-  margin-left: 18px;
-  text-decoration: none;
-  transition: color 0.2s ease;
+
+/* 5. Social icons */
+.footer-theme .fab {
+  color: #f5e2b8; /* Cream */
+  transition: color 0.2s;
 }
-.social-icons a:first-child {
-  margin-left: 0;
-}
-.social-icons a:hover {
-  color: #ffffff;
+.footer-theme .fab:hover {
+  color: #b18d30; /* Mustard */
 }
