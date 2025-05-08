@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f8f9fa;
+  margin-top: 5rem;
 }
 
 .navbar-brand {
@@ -46,4 +47,78 @@ body {
 .comment-time {
   font-size: 0.85rem;
   color: #666;
+}
+
+.navbar-dark .nav-item .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+.fa-li {
+  position: relative;
+  left: 0;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #f2f3f6;
+  color: #000000;
+  padding-top: 60px;
+  font-size: 0.9rem;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.footer-column h4 {
+  color: #000000;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+.footer-column a {
+  color: #505050;
+  text-decoration: none;
+}
+.footer-column a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer-bottom {
+  border-top: 1px solid #d8d6d6;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+.copyright {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 0;
+}
+.social-icons a {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin-left: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.social-icons a:first-child {
+  margin-left: 0;
+}
+.social-icons a:hover {
+  color: #ffffff;
 }
