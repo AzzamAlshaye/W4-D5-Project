@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Details – Time Machine</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assests/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="index.html">Time Machine</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a id="nav-login" class="nav-link" href="login.html">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-signup" class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item d-none" id="nav-user">
+            <a class="nav-link" href="profile.html"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="event-details">
+      <h2 id="event-title"></h2>
+      <p><em id="event-date"></em></p>
+      <p id="event-desc"></p>
+
+      <hr />
+      <h4>Comments</h4>
+      <div id="comments-list"></div>
+
+      <form id="commentForm" class="mt-3">
+        <div class="mb-3">
+          <textarea
+            name="comment"
+            class="form-control"
+            rows="2"
+            placeholder="Leave a comment..."
+            required
+          ></textarea>
+        </div>
+        <button class="btn btn-primary">Post Comment</button>
+      </form>
+    </div>
+
+    <script src="./assests/js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"), 10);
+        const events = getEvents();
+        if (!events[id]) {
+          document.body.innerHTML =
+            '<p class="text-center mt-5">Event not found.</p>';
+          return;
+        }
+        const e = events[id];
+        document.getElementById("event-title").textContent = e.title;
+        document.getElementById("event-date").textContent = e.date;
+        document.getElementById("event-desc").textContent = e.description;
+
+        // Render comments
+        const comContainer = document.getElementById("comments-list");
+        getComments(id).forEach((c) => {
+          const div = document.createElement("div");
+          div.className = "comment";
+          div.innerHTML = `
+          <div class="comment-user">${c.user}</div>
+          <div class="comment-time">${new Date(
+            c.timestamp
+          ).toLocaleString()}</div>
+          <div class="comment-text">${c.text}</div>`;
+          comContainer.append(div);
+        });
+
+        // Handle new comment
+        const form = document.getElementById("commentForm");
+        if (!currentUser()) {
+          form.innerHTML =
+            '<p>Please <a href="login.html">log in</a> to comment.</p>';
+        } else {
+          form.addEventListener("submit", (ev) => {
+            ev.preventDefault();
+            addComment(id, ev.target.comment.value);
+            window.location.reload();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

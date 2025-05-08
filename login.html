@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Log In – Time Machine</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assests/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="index.html">Time Machine</a>
+    </nav>
+
+    <form id="loginForm" class="container mt-5" style="max-width: 400px">
+      <h2>Log In</h2>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input id="li-username" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input id="li-password" type="password" class="form-control" />
+      </div>
+      <button class="btn btn-primary">Log In</button>
+    </form>
+
+    <script src="./assests/js/app.js"></script>
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        try {
+          login(
+            document.getElementById("li-username").value,
+            document.getElementById("li-password").value
+          );
+          window.location = "index.html";
+        } catch (err) {
+          alert(err);
+        }
+      });
+    </script>
+  </body>
+</html>

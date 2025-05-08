@@ -1,0 +1,49 @@
+/* assets/css/styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 960px;
+}
+
+#timeline {
+  height: 400px;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 10px;
+  border-radius: 0.25rem;
+}
+
+.event-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f1f1f1;
+  border-radius: 0.25rem;
+}
+
+.comment-user {
+  font-weight: bold;
+}
+
+.comment-time {
+  font-size: 0.85rem;
+  color: #666;
+}

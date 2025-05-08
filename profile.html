@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile – Time Machine</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assests/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="index.html">Time Machine</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a id="nav-logout" class="nav-link" href="#">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h2>Your Profile</h2>
+      <p>Username: <strong id="profile-username"></strong></p>
+
+      <h3 class="mt-4">Add New Event</h3>
+      <form id="addEventForm" class="mb-4" style="max-width: 600px">
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input name="title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input name="date" type="date" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea
+            name="description"
+            class="form-control"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+        <button class="btn btn-success">Add Event</button>
+      </form>
+
+      <h3>Your Events</h3>
+      <ul id="my-events" class="list-group"></ul>
+    </div>
+
+    <script src="./assests/js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = currentUser();
+        if (!user) return (window.location = "login.html");
+        document.getElementById("profile-username").textContent = user;
+
+        // Log out link
+        document.getElementById("nav-logout").addEventListener("click", (e) => {
+          e.preventDefault();
+          logout();
+          window.location = "index.html";
+        });
+
+        // List user’s events
+        const list = document.getElementById("my-events");
+        getEvents()
+          .filter((e) => e.user === user)
+          .forEach((e, i) => {
+            const li = document.createElement("li");
+            li.className = "list-group-item";
+            li.innerHTML = `<a href="event.html?id=${i}">${e.title}</a> (${e.date})`;
+            list.append(li);
+          });
+
+        // Add event form
+        document
+          .getElementById("addEventForm")
+          .addEventListener("submit", (ev) => {
+            ev.preventDefault();
+            addEvent({
+              title: ev.target.title.value,
+              date: ev.target.date.value,
+              description: ev.target.description.value,
+              user,
+            });
+            window.location.reload();
+          });
+      });
+    </script>
+  </body>
+</html>
