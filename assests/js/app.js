@@ -225,6 +225,84 @@ document.addEventListener("DOMContentLoaded", () => {
     shortDesc:
       "Apollo Guidance Computer read-only rope memory is launched into space aboard the Apollo 11 mission, which carried American astronauts to the Moon and back. This rope memory was made by hand, and was equivalent to 72 KB of storage.",
   };
+  yearData[1970] = {
+    title: "First IBM computer to use semiconductor memory",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1970.ibm370memory.jpg",
+    desc: "In a departure from using magnetic core memory technology, IBM introduces the System 370 Model 145 mainframe computer, the company's first all-semiconductor memory computer. The Model 145 could store an equivalent amount of data in half the space, compared to a computer using core memory.",
+    shortDesc:
+      "In a departure from using magnetic core memory technology, IBM introduces the System 370 Model 145 mainframe computer, the company's first all-semiconductor memory computer.",
+  };
+  yearData[1973] = {
+    title: "Birth of modern mobile networks",
+    img: "https://images.computerhistory.org/timeline/timeline_networking.web_1973_sri.van.jpg",
+    desc: "In 1973, ARPA funds the outfitting of a packet radio research van at SRI to develop standards for a Packet Radio Network (PRNET). As the unmarked van drives through the San Francisco Bay Area, stuffed full of hackers and sometimes uniformed generals, it is pioneering wireless, packet-switched digital networks, including the kind your mobile phone uses today. A related set of experiments test out Voice Over IP (like the later Skype). The van will also play a huge role in 1977 as a major birthplace of the Internet.",
+    shortDesc:
+      "In 1973, ARPA funds the outfitting of a packet radio research van at SRI to develop standards for a Packet Radio Network (PRNET). As the unmarked van drives through the San Francisco Bay Area.",
+  };
+  yearData[1976] = {
+    title: "Japanese manufactured dynamic random-access memory (DRAM)",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1976.hitachi.dram_1985.jpg",
+    desc: "The Japanese Trade Ministry sees a chance to make Japan a leader in the dynamic random-access memory (DRAM) chip industry, as sales soared when DRAMs entered commercial production in the early 1970s. With customer demand in the millions, DRAMs became the first “mass market” chips, sparking fierce international competition. In 1976, the Japanese Trade Ministry funded Fujitsu, Hitachi, Mitsubishi, NEC, and Toshiba to develop 64K DRAMs. The consortium triumphed, decimating American memory suppliers and provoking the U.S. government to threaten trade sanctions. Although tensions eased between Japanese and American manufacturers, Korea soon overtook them both.",
+    shortDesc:
+      "The Japanese Trade Ministry sees a chance to make Japan a leader in the dynamic random-access memory (DRAM) chip industry, as sales soared when DRAMs entered commercial production in the early 1970s. With customer demand in the millions.",
+  };
+  yearData[1979] = {
+    title: "Computing for One: Personal computers vs. Networks",
+    img: "https://images.computerhistory.org/timeline/timeline_networking.web_1979_pcs_networking.jpg",
+    desc: "Intel introduces its 4 Mbit bubble memory array. A few magnetic bubble memories reached the market in the 1970s and 1980s and were used in niche markets like video games and machine tool controllers. The introduction of cheaper, faster and higher density memory solutions rendered bubble memory obsolete. Each silver square, or 'bubble,' on this board stored 1 Mbit.",
+    shortDesc:
+      "intel introduces its 4 Mbit bubble memory array. A few magnetic bubble memories reached the market in the 1970s and 1980s and were used in niche markets like video games and machine tool controllers.",
+  };
+  yearData[1980] = {
+    title: "Seagate ST506 hard disk drive",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1980.st506_hdd.jpg",
+    desc: "Seagate Technology creates the first hard disk drive for microcomputers, the ST506. The disk held 5 megabytes of data, five times as much as a standard floppy disk, and fit in the space of a floppy disk drive. The hard disk drive itself was a rigid metallic platter coated on both sides with a thin layer of magnetic material that stores digital data. Seagate Technology grew out of a 1979 conversation between Alan Shugart and Finis Conner, who had worked together at Memorex. The two men decided to found the company after developing the idea of scaling down a hard disk drive to the same size as the then-standard 5 ¼-inch floppies. Upon releasing its first product, Seagate quickly drew such big-name customers as Apple Computer and IBM. Within a few years, it sold 4 million units.",
+    shortDesc:
+      "Seagate Technology creates the first hard disk drive for microcomputers, the ST506. The disk held 5 megabytes of data, five times as much as a standard floppy disk, and fit in the space of a floppy disk drive. The hard disk drive itself was a rigid metallic platter coated on both sides with a thin layer of magnetic material that stores digital data.",
+  };
+  yearData[1983] = {
+    title: "CD-ROM",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1983.cdrom.jpg",
+    desc: "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984 was Grolier´s Electronic Encyclopedia, which came out in 1985. The 9 million words in the encyclopedia only took up 12 percent of the available space. The same year, computer and electronics companies worked together to set a standard for the disks so any computer would be able to access the information.",
+    shortDesc:
+      "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984.",
+  };
+  yearData[1986] = {
+    title: "Compaq introduces the Deskpro 386 system",
+    img: "https://images.computerhistory.org/timeline/timeline_computers_1986.compaq-deskpro-386.jpg",
+    desc: "Compaq beats IBM to the market when it announces the Deskpro 386, the first computer on the market to use Intel´s new 80386 chip, a 32-bit microprocessor with 275,000 transistors on each chip. At 4 million operations per second and 4 kilobytes of memory, the 80386 gave PCs as much speed and power as older mainframes and minicomputers. The 386 chip brought with it the introduction of a 32-bit architecture, a significant improvement over the 16-bit architecture of previous microprocessors. It had two operating modes, one that mirrored the segmented memory of older x86 chips, allowing full backward compatibility, and one that took full advantage of its more advanced technology. The new chip made graphical operating environments for IBM PC and PC-compatible computers practical. The architecture that allowed Windows and IBM OS/2 has remained in subsequent chips.",
+    shortDesc:
+      "Compaq beats IBM to the market when it announces the Deskpro 386, the first computer on the market to use Intel´s new 80386 chip, a 32-bit microprocessor with 275,000 transistors on each chip. At 4 million operations per second and 4 kilobytes of memory, the 80386 gave PCs as much speed and power as older mainframes and minicomputers.",
+  };
+  yearData[1989] = {
+    title: "Nintendo releases the Game Boy handheld game console",
+    img: "https://images.computerhistory.org/timeline/timeline_graphics.games_1989.gameboy.jpg",
+    desc: "Handheld electronic games had been popular for more than a decade by the time Nintendo introduces the Game Boy. The system used removable game cartridges to play on its 2.9-inch black and white screen. Game Boy's popularity was helped by its major release title, the puzzle game Tetris. Over nearly twenty years, more than one hundred million Game Boys were sold, making it one of the all-time, top-selling game systems.",
+    shortDesc:
+      "Handheld electronic games had been popular for more than a decade by the time Nintendo introduces the Game Boy. The system used removable game cartridges to play on its 2.9-inch black and white screen.",
+  };
+  yearData[1990] = {
+    title: "Photoshop is released",
+    img: "https://images.computerhistory.org/timeline/timeline_sw.languages_1990.photoshop.jpg",
+    desc: "Photoshop is released. Created by brothers John and Thomas Knoll, Photoshop was an image editing program and the most popular software program published by Adobe Systems. Thomas, while earning a PhD at the University of Michigan, had created an early version of the program in 1987, and John saw a practical use for it as a special effects staff member at Industrial Light & Magic. It was then used for image editing in the “pseudopod” scene in the movie The Abyss. When Adobe saw potential in the project they bought a license for distribution in 1989 and released the product on February 19, 1990.",
+    shortDesc:
+      "Photoshop is released. Created by brothers John and Thomas Knoll, Photoshop was an image editing program and the most popular software program published by Adobe Systems. Thomas, while earning a PhD at the University of Michigan, had created an early version of the program in 1987, and John saw a practical use for it as a special effects staff member at Industrial Light & Magic.",
+  };
+  yearData[1983] = {
+    title: "CD-ROM",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1983.cdrom.jpg",
+    desc: "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984 was Grolier´s Electronic Encyclopedia, which came out in 1985. The 9 million words in the encyclopedia only took up 12 percent of the available space. The same year, computer and electronics companies worked together to set a standard for the disks so any computer would be able to access the information.",
+    shortDesc:
+      "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984.",
+  };
+  yearData[1983] = {
+    title: "CD-ROM",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1983.cdrom.jpg",
+    desc: "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984 was Grolier´s Electronic Encyclopedia, which came out in 1985. The 9 million words in the encyclopedia only took up 12 percent of the available space. The same year, computer and electronics companies worked together to set a standard for the disks so any computer would be able to access the information.",
+    shortDesc:
+      "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984.",
+  };
+
   // ▶️ **SEED** localStorage “events” if it’s empty
   if (!getData("events") || getData("events").length === 0) {
     const evts = [];
