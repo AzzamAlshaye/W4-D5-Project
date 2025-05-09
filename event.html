@@ -23,7 +23,7 @@
     />
   </head>
   <body>
-    <!-- Navbar (copy from index.html) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-main">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -69,7 +69,7 @@
         <div class="card-body">
           <h1 id="event-title" class="card-title"></h1>
           <div class="row">
-            <div class="col-12 col-md-6 mx-auto text-center mb-4">
+            <div class="col-12 col-md-4 mx-auto text-center mb-4">
               <img id="event-img" class="img-fluid rounded" alt="…" />
             </div>
           </div>
@@ -95,12 +95,10 @@
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn-main">Submit</button>
         </form>
       </section>
     </main>
-
-    <!-- Newsletter & Footer (optional—you can copy from your index.html if you like) -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -118,40 +116,66 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
-        const year = parseInt(params.get("id"), 10);
+        const eventId = params.get("id");
+        const year = parseInt(eventId, 10);
+        if (!eventId || isNaN(year)) {
+          document.body.innerHTML =
+            '<p class="text-center mt-5">Event not found.</p>';
+          return;
+        }
 
-        // convert year → zero-based index
+        // zero‐based index for event data
         const idx = year - 1930;
         const events = getEvents();
         const e = events[idx];
-
         if (!e) {
           document.body.innerHTML =
             '<p class="text-center mt-5">Event not found.</p>';
           return;
         }
 
-        document.getElementById("event-title").textContent = e.title;
+        // render event details
         document.getElementById("event-img").src = e.img;
+        document.getElementById("event-img").alt = e.title;
+        document.getElementById("event-title").textContent = e.title;
         document.getElementById("event-date").textContent = e.date;
         document.getElementById("event-desc").textContent = e.description;
 
-        // Render comments
+        // render comments
         const comContainer = document.getElementById("comments-list");
-        getComments(id).forEach((c) => {
+        const comments = getComments(eventId);
+        const me = currentUser();
+
+        comments.forEach((c, idx) => {
           const div = document.createElement("div");
-          div.className = "mb-3 p-3 border rounded";
+          div.className = "mb-3 p-3 border rounded position-relative";
           div.innerHTML = `
             <strong>${c.user}</strong>
-            <small class="text-muted float-end">${new Date(
-              c.timestamp
-            ).toLocaleString()}</small>
+            <small class="text-muted float-end">
+              ${new Date(c.timestamp).toLocaleString()}
+            </small>
             <p class="mt-2 mb-0">${c.text}</p>
           `;
+
+          // delete button for comment owner
+          if (me && c.user === me) {
+            const btn = document.createElement("button");
+            btn.className = "btn btn-sm btn-outline-danger position-absolute";
+            btn.style.top = "3rem";
+            btn.style.right = "0.5rem";
+            btn.textContent = "Delete";
+            btn.addEventListener("click", () => {
+              if (!confirm("Delete your comment?")) return;
+              deleteComment(eventId, idx);
+              div.remove();
+            });
+            div.append(btn);
+          }
+
           comContainer.append(div);
         });
 
-        // Handle new comment
+        // handle comment form
         const form = document.getElementById("commentForm");
         if (!currentUser()) {
           form.innerHTML =
@@ -159,7 +183,7 @@
         } else {
           form.addEventListener("submit", (ev) => {
             ev.preventDefault();
-            addComment(id, ev.target.comment.value);
+            addComment(eventId, ev.target.comment.value.trim());
             window.location.reload();
           });
         }

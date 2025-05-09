@@ -88,7 +88,7 @@
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn-main">Submit</button>
         </form>
       </section>
     </main>
@@ -104,11 +104,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assests/js/app.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
         let id = parseInt(params.get("id"), 10);
-        // if treating id as year, uncomment below:
+        // if you’re using raw year as key, uncomment:
         // id = id - 1930;
 
         const events = getEvents();
@@ -119,20 +120,21 @@
           return;
         }
 
-        // Populate image
+        // Populate image & text
         document.getElementById("event-img").src = e.img;
         document.getElementById("event-img").alt = e.title;
-
-        // Populate text
         document.getElementById("event-title").textContent = e.title;
         document.getElementById("event-date").textContent = e.date;
         document.getElementById("event-desc").textContent = e.description;
 
-        // Render comments
+        // Render comments with delete
         const comContainer = document.getElementById("comments-list");
-        getComments(id).forEach((c) => {
+        const comments = getComments(id);
+        const me = currentUser();
+
+        comments.forEach((c, idx) => {
           const div = document.createElement("div");
-          div.className = "mb-3 p-3 border rounded";
+          div.className = "mb-3 p-3 border rounded position-relative";
           div.innerHTML = `
             <strong>${c.user}</strong>
             <small class="text-muted float-end">${new Date(
@@ -140,6 +142,21 @@
             ).toLocaleString()}</small>
             <p class="mt-2 mb-0">${c.text}</p>
           `;
+
+          if (me && c.user === me) {
+            const btn = document.createElement("button");
+            btn.className = "btn btn-sm btn-outline-danger position-absolute";
+            btn.style.top = "3rem";
+            btn.style.right = "0.5rem";
+            btn.textContent = "Delete";
+            btn.addEventListener("click", () => {
+              if (!confirm("Delete your comment?")) return;
+              deleteComment(id, idx);
+              div.remove();
+            });
+            div.append(btn);
+          }
+
           comContainer.append(div);
         });
 
@@ -151,7 +168,7 @@
         } else {
           form.addEventListener("submit", (ev) => {
             ev.preventDefault();
-            addComment(id, ev.target.comment.value);
+            addComment(id, ev.target.comment.value.trim());
             window.location.reload();
           });
         }

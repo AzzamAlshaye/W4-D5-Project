@@ -46,19 +46,29 @@ function addEvent(evt) {
   setData("events", evts);
 }
 function getComments(eventId) {
-  return getData("comments").filter((c) => c.eventId === eventId);
+  const all = JSON.parse(localStorage.getItem("comments") || "{}");
+  return all[eventId] || [];
 }
+
+// Add a comment under the raw eventId
 function addComment(eventId, text) {
-  const comments = getData("comments");
-  comments.push({
-    eventId,
+  const all = JSON.parse(localStorage.getItem("comments") || "{}");
+  const list = all[eventId] || [];
+  list.push({
     user: currentUser(),
     text,
     timestamp: Date.now(),
   });
-  setData("comments", comments);
+  all[eventId] = list;
+  localStorage.setItem("comments", JSON.stringify(all));
 }
-
+// Remove the comment at commentIdx for the given eventId
+function deleteComment(eventId, commentIdx) {
+  const allComments = JSON.parse(localStorage.getItem("comments") || "{}");
+  if (!allComments[eventId]) return;
+  allComments[eventId].splice(commentIdx, 1);
+  localStorage.setItem("comments", JSON.stringify(allComments));
+}
 // — NAVBAR STATE —
 document.addEventListener("DOMContentLoaded", () => {
   const user = currentUser();
