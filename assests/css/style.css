@@ -75,7 +75,10 @@ body {
 /* hero page1 start */
 /* --- Timeline slider styles --- */
 #timeline-slider {
-  padding: 2rem 0;
+  padding: 2rem 2rem;
+  border: 1px solid #f0e3cd;
+  background-color: #f2eadc;
+  border-radius: 1rem;
 }
 .years-wrapper {
   display: flex;
@@ -110,6 +113,11 @@ body {
   border-color: #0d6efd;
   color: #fff;
 }
+.card {
+  border-radius: 1rem;
+  background-color: #f3f1ee;
+}
+
 /* 1) make the carousel the positioning context */
 #decadeCarousel {
   position: relative;

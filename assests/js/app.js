@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1️⃣ Build the data for each year (1930–2019) with placeholder content
+  // 1️⃣ Build the data for each year (1930–2019)
   const yearData = {};
   for (let y = 1930; y <= 2019; y++) {
     yearData[y] = {
@@ -111,11 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: `Description of what happened in ${y}.`,
     };
   }
-  // ─── Override any specific years with your real content: ────────────
-  yearData[1933] = {
-    title: "First Technicolor Feature",
-    img: "/assets/1933-film.jpg",
-    desc: '"The Wizard of Oz" premiered, first major Hollywood film shot in full Technicolor.',
+  // ─── Override specific years with real content ────────────
+  yearData[1934] = {
+    title: "Telex messaging network comes on line",
+    img: "https://images.computerhistory.org/timeline/timeline_networking.web_1933_telex.jpg",
+    desc: "Like the Volkswagen Beetle and modern freeway systems, the Telex messaging network comes out of the early period of Germany’s Third Reich. Telex starts as a way to distribute military messages, but soon becomes a world-wide network of both official and commercial text messaging that",
   };
   yearData[1945] = {
     title: "End of World War II",
@@ -123,24 +123,22 @@ document.addEventListener("DOMContentLoaded", () => {
     desc: "Victory in Europe Day marked the official end of WWII in Europe on May 8, 1945.",
   };
 
-  // 2️⃣ Configure which years are disabled, and which one starts active
-  const disabledYears = [
-    1930, 1931, 1932, 1935, 1936, 1938 /* …other years without data… */,
-  ];
+  // 2️⃣ Which years are disabled, and which one starts active?
+  const disabledYears = [1930, 1931, 1932, 1935, 1936, 1938 /* …etc… */];
   const initialActiveYear = 1934;
 
-  // 3️⃣ Define the decades array (1930s, 1940s, … up to 2010s)
+  // 3️⃣ Define the decades (1930s–2010s)
   const decades = Array.from({ length: 9 }, (_, i) => 1930 + i * 10);
 
-  // 4️⃣ Grab the indicator container and the carousel-inner container
+  // 4️⃣ Grab the indicator & inner containers
   const indicatorsEl = document.querySelector(
     "#decadeCarousel .carousel-indicators"
   );
   const innerEl = document.querySelector("#decadeCarousel .carousel-inner");
 
-  // 5️⃣ Programmatically build indicators and slides
+  // 5️⃣ Build indicators & slides
   decades.forEach((startYear, idx) => {
-    // • Indicator button
+    // • Indicator
     const btn = document.createElement("button");
     btn.type = "button";
     btn.dataset.bsTarget = "#decadeCarousel";
@@ -152,25 +150,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // • Slide
     const slide = document.createElement("div");
     slide.classList.add("carousel-item");
+
     if (idx === 0) slide.classList.add("active");
 
     const wrapper = document.createElement("div");
-    wrapper.className = "years-wrapper";
+    wrapper.classList.add("years-wrapper", "d-flex", "gap-4");
 
-    // • Ten years per decade
+    // • Ten year-pills
     for (let y = startYear; y < startYear + 10; y++) {
       const yearEl = document.createElement("span");
       yearEl.textContent = y;
       yearEl.dataset.year = y;
 
-      // decide disabled vs. clickable
       if (disabledYears.includes(y)) {
         yearEl.className = "year-item disabled";
       } else {
         yearEl.className = "year-item year-link";
       }
-
-      // mark the initial active year
       if (y === initialActiveYear) {
         yearEl.classList.add("active");
       }
@@ -182,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     innerEl.appendChild(slide);
   });
 
-  // 6️⃣ Grab carousel instance and detail‐card elements
+  // 6️⃣ Grab carousel + detail-card elements
   const carouselEl = document.getElementById("decadeCarousel");
   const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
   const detailCard = document.getElementById("yearDetailCard");
@@ -190,35 +186,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailTitle = document.getElementById("yearDetailTitle");
   const detailDesc = document.getElementById("yearDetailDesc");
 
-  // 7️⃣ Helper to center a year-pill in its scroll container
+  // 7️⃣ Helper to center an element in the scroll container
   function centerYear(el) {
     const wrap = el.closest(".years-wrapper");
     const offset = el.offsetLeft - wrap.clientWidth / 2 + el.clientWidth / 2;
     wrap.scrollTo({ left: offset, behavior: "smooth" });
   }
 
-  // 8️⃣ After each carousel slide, re-center the active year
+  // 8️⃣ After sliding decades, re-center the active pill
   carouselEl.addEventListener("slid.bs.carousel", () => {
     const active = carouselEl.querySelector(".year-link.active");
     if (active) centerYear(active);
   });
 
-  // 9️⃣ Delegate clicks on years to highlight, center & show detail
+  // 9️⃣ Delegate clicks on years → highlight, center & populate card
   carouselEl.addEventListener("click", (e) => {
     const link = e.target.closest(".year-link");
     if (!link) return;
     e.preventDefault();
 
-    // • Highlight
     carouselEl
       .querySelectorAll(".year-link.active")
       .forEach((el) => el.classList.remove("active"));
     link.classList.add("active");
 
-    // • Center it
     centerYear(link);
 
-    // • Populate detail card
     const yr = link.dataset.year;
     const entry = yearData[yr];
     if (entry) {
@@ -232,7 +225,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ⓾ On load, center the initialActiveYear pill
-  const initialEl = carouselEl.querySelector(".year-item.active");
-  if (initialEl) centerYear(initialEl);
+  // 🔟 On load → center & populate initialActiveYear without requiring a click
+  const initialEl = carouselEl.querySelector(
+    `.year-item[data-year="${initialActiveYear}"]`
+  );
+  if (initialEl) {
+    centerYear(initialEl);
+    // directly populate the detail card
+    const entry = yearData[initialActiveYear];
+    if (entry) {
+      detailImg.src = entry.img;
+      detailImg.alt = entry.title;
+      detailTitle.textContent = `${initialActiveYear}: ${entry.title}`;
+      detailDesc.textContent = entry.desc;
+      detailCard.style.display = "block";
+    }
+  }
 });
