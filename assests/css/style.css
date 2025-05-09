@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #efe3cd;
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 /* colors/themes start */
@@ -72,6 +72,116 @@ body {
 
 /* nav css end  */
 
+/* hero page1 start */
+/* --- Timeline slider styles --- */
+#timeline-slider {
+  padding: 2rem 0;
+}
+.years-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.years-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.years-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+.year-item {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #495057;
+  white-space: nowrap;
+}
+.year-item.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.year-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+/* 1) make the carousel the positioning context */
+#decadeCarousel {
+  position: relative;
+  padding-top: 2.5rem; /* room for decade dots */
+  padding-bottom: 4rem; /* room for arrows below */
+}
+
+/* 2) pull indicators to very top, centered */
+#decadeCarousel .carousel-indicators {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin: 0;
+  height: 2vh;
+}
+
+/* 3) style the scrollable year row */
+.years-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.years-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.years-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+/* 4) each year pill */
+.year-item {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #495057;
+  white-space: nowrap;
+  user-select: none;
+}
+.year-item.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.year-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+/* 5) move built-in arrows underneath */
+#decadeCarousel .carousel-control-prev,
+#decadeCarousel .carousel-control-next {
+  top: auto;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  transform: none;
+  opacity: 1;
+}
+#decadeCarousel .carousel-control-prev {
+  left: 1rem;
+}
+#decadeCarousel .carousel-control-next {
+  right: 1rem;
+}
 .container {
   max-width: 960px;
 }

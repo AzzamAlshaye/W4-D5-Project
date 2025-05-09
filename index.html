@@ -108,7 +108,62 @@
       <!-- Container wrapper -->
     </nav>
 
-    <section style="height: 100vh"></section>
+    <section style="height: 100vh">
+      <section>test</section>
+      <section id="timeline-slider" class="container my-5">
+        <div
+          id="decadeCarousel"
+          class="carousel slide"
+          data-bs-ride="false"
+          data-bs-interval="false"
+        >
+          <!-- decade dots (populated by JS) -->
+          <div class="carousel-indicators"></div>
+
+          <!-- slides (populated by JS) -->
+          <div class="carousel-inner"></div>
+
+          <!-- Prev/Next arrows underneath -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#decadeCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#decadeCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- DETAIL CARD -->
+        <div
+          id="yearDetailCard"
+          class="card mt-5 mx-auto"
+          style="max-width: 800px; display: none"
+        >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img id="yearDetailImg" class="img-fluid rounded-start" alt="" />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 id="yearDetailTitle" class="card-title"></h5>
+                <p id="yearDetailDesc" class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
     <!-- NavBar -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <a class="navbar-brand" href="index.html">Time Machine</a>
@@ -126,12 +181,6 @@
         </ul>
       </div>
     </nav> -->
-
-    <!-- Timeline container -->
-    <!-- <div class="container my-5">
-      <h1 class="mb-4">Explore History</h1>
-      <div id="timeline"></div>
-    </div> -->
 
     <!-- Newsletter Section -->
     <section class="py-5 newsletter-section">
