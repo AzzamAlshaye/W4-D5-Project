@@ -6,29 +6,6 @@ function setData(key, val) {
   localStorage.setItem(key, JSON.stringify(val));
 }
 
-// — INITIAL EVENTS (built-in, no fetch) —
-const initialEvents = [
-  {
-    title: "Invention of the Printing Press",
-    date: "1440-01-01",
-    description: "Gutenberg invents movable type.",
-  },
-  {
-    title: "First Programmable Computer",
-    date: "1936-08-01",
-    description: "Turing’s machine concept.",
-  },
-  {
-    title: "Birth of the Internet",
-    date: "1969-10-29",
-    description: "ARPANET packet switch test.",
-  },
-  // …add as many as you like
-];
-if (!localStorage.getItem("events")) {
-  setData("events", initialEvents);
-}
-
 // — AUTH —
 function register(username, password) {
   const users = getData("users");
@@ -154,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (idx === 0) slide.classList.add("active");
 
     const wrapper = document.createElement("div");
-    wrapper.classList.add("years-wrapper", "d-flex", "gap-4");
+    wrapper.classList.add("years-wrapper", "d-flex", "gap-4", "flex-wrap");
 
     // • Ten year-pills
     for (let y = startYear; y < startYear + 10; y++) {

@@ -81,8 +81,8 @@ body {
 /* 1) make the carousel the positioning context */
 #decadeCarousel {
   position: relative;
-  padding-top: 2.5rem; /* room for decade dots */
-  padding-bottom: 4rem; /* room for arrows below */
+  padding-top: 2rem; /* room for decade dots */
+  padding-bottom: 3.5rem; /* room for arrows below */
 }
 
 /* 2) pull indicators to very top, centered */
