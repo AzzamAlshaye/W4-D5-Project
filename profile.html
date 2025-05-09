@@ -13,18 +13,53 @@
     <link href="./assests/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <a class="navbar-brand" href="index.html">Time Machine</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a id="nav-logout" class="nav-link" href="#">Log Out</a>
-          </li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-main">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="./assests/images/logos/logo-gold.png"
+            height="80"
+            alt="website logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item d-none" id="nav-user">
+              <a class="nav-link" href="profile.html"></a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-logout" class="nav-link" href="#">Log Out</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="fa fa-user-circle fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div class="container my-5">
+    <div class="container my-5 pt-5">
       <h2>Your Profile</h2>
       <p>Username: <strong id="profile-username"></strong></p>
 
@@ -37,6 +72,16 @@
         <div class="mb-3">
           <label class="form-label">Date</label>
           <input name="date" type="date" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <input
+            name="img"
+            type="url"
+            class="form-control"
+            placeholder="https://..."
+            required
+          />
         </div>
         <div class="mb-3">
           <label class="form-label">Description</label>
@@ -68,18 +113,31 @@
           window.location = "index.html";
         });
 
-        // List user’s events
+        // List user’s events with delete button
         const list = document.getElementById("my-events");
-        getEvents()
-          .filter((e) => e.user === user)
-          .forEach((e, i) => {
-            const li = document.createElement("li");
-            li.className = "list-group-item";
-            li.innerHTML = `<a href="event.html?id=${i}">${e.title}</a> (${e.date})`;
-            list.append(li);
+        getEvents().forEach((evt, idx) => {
+          if (evt.user !== user) return;
+          const li = document.createElement("li");
+          li.className = "list-group-item d-flex align-items-center";
+          li.innerHTML = `
+        <img src="${evt.img}" alt="" class="img-thumbnail me-3" style="width:60px; height:auto;" />
+        <div>
+          <a href="userEvents.html?id=${idx}">${evt.title}</a>
+          <small class="text-muted d-block">${evt.date}</small>
+        </div>
+        <button class="btn btn-danger btn-sm ms-auto delete-btn">Delete</button>
+      `;
+          // wire up delete
+          li.querySelector(".delete-btn").addEventListener("click", () => {
+            if (confirm("Are you sure you want to delete this event?")) {
+              deleteEvent(idx);
+              li.remove(); // remove from DOM
+            }
           });
+          list.append(li);
+        });
 
-        // Add event form
+        // Add event form (unchanged)
         document
           .getElementById("addEventForm")
           .addEventListener("submit", (ev) => {
@@ -88,11 +146,19 @@
               title: ev.target.title.value,
               date: ev.target.date.value,
               description: ev.target.description.value,
+              img: ev.target.img.value,
               user,
             });
             window.location.reload();
           });
       });
+
+      // make sure deleteEvent is in scope
+      function deleteEvent(index) {
+        const events = getEvents();
+        events.splice(index, 1);
+        localStorage.setItem("events", JSON.stringify(events));
+      }
     </script>
   </body>
 </html>

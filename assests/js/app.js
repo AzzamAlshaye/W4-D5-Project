@@ -5,6 +5,11 @@ function getData(key) {
 function setData(key, val) {
   localStorage.setItem(key, JSON.stringify(val));
 }
+function deleteEvent(index) {
+  const events = getEvents();
+  events.splice(index, 1);
+  localStorage.setItem("events", JSON.stringify(events));
+}
 
 // — AUTH —
 function register(username, password) {
@@ -54,30 +59,23 @@ function addComment(eventId, text) {
   setData("comments", comments);
 }
 
-// — UI INIT —
-// Timeline on index.html
-// if (document.getElementById("timeline")) {
-//   const items = getEvents().map((e, i) => ({
-//     id: i,
-//     content: `<a href="event.html?id=${i}">${e.title}</a>`,
-//     start: e.date,
-// }));
-// Using vis.js for timeline display (no data fetch)
-//   new vis.Timeline(document.getElementById("timeline"), items, {});
-// }
-
 // — NAVBAR STATE —
 document.addEventListener("DOMContentLoaded", () => {
   const user = currentUser();
   if (user) {
-    document.getElementById("nav-login").classList.add("d-none");
-    document.getElementById("nav-signup").classList.add("d-none");
+    const loginLink = document.getElementById("nav-login");
+    const signupLink = document.getElementById("nav-signup");
+    if (loginLink) loginLink.classList.add("d-none");
+    if (signupLink) signupLink.classList.add("d-none");
     const navUser = document.getElementById("nav-user");
-    navUser.querySelector("a").textContent = user;
-    navUser.classList.remove("d-none");
+    if (navUser) {
+      navUser.querySelector("a").textContent = user;
+      navUser.classList.remove("d-none");
+    }
   }
 });
 
+// — TIMELINE & DETAIL CARD —
 document.addEventListener("DOMContentLoaded", () => {
   // 1️⃣ Build the data for each year (1930–2019)
   const yearData = {};
@@ -100,6 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
     desc: "Victory in Europe Day marked the official end of WWII in Europe on May 8, 1945.",
   };
 
+  // ▶️ **SEED** localStorage “events” if it’s empty
+  if (!getData("events") || getData("events").length === 0) {
+    const evts = [];
+    for (let y = 1930; y <= 2019; y++) {
+      evts.push({
+        title: yearData[y].title,
+        date: String(y), // or use a more precise date field
+        description: yearData[y].desc,
+        img: yearData[y].img,
+      });
+    }
+    setData("events", evts);
+  }
   // 2️⃣ Which years are disabled, and which one starts active?
   const disabledYears = [1930, 1931, 1932, 1935, 1936, 1938 /* …etc… */];
   const initialActiveYear = 1934;
@@ -127,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // • Slide
     const slide = document.createElement("div");
     slide.classList.add("carousel-item");
-
     if (idx === 0) slide.classList.add("active");
 
     const wrapper = document.createElement("div");
@@ -138,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const yearEl = document.createElement("span");
       yearEl.textContent = y;
       yearEl.dataset.year = y;
-
       if (disabledYears.includes(y)) {
         yearEl.className = "year-item disabled";
       } else {
@@ -147,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (y === initialActiveYear) {
         yearEl.classList.add("active");
       }
-
       wrapper.appendChild(yearEl);
     }
 
@@ -197,6 +205,10 @@ document.addEventListener("DOMContentLoaded", () => {
       detailTitle.textContent = `${yr}: ${entry.title}`;
       detailDesc.textContent = entry.desc;
       detailCard.style.display = "block";
+      // wire up the "more details" link:
+      document
+        .getElementById("moreDetailsLink")
+        .setAttribute("href", `event.html?id=${yr}`);
     } else {
       detailCard.style.display = "none";
     }
@@ -208,7 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   if (initialEl) {
     centerYear(initialEl);
-    // directly populate the detail card
     const entry = yearData[initialActiveYear];
     if (entry) {
       detailImg.src = entry.img;
@@ -216,6 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
       detailTitle.textContent = `${initialActiveYear}: ${entry.title}`;
       detailDesc.textContent = entry.desc;
       detailCard.style.display = "block";
+      document
+        .getElementById("moreDetailsLink")
+        .setAttribute("href", `event.html?id=${initialActiveYear}`);
     }
   }
 });

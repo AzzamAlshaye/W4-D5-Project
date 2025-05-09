@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Details – Time Machine</title>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -16,21 +15,16 @@
       crossorigin="anonymous"
     />
     <link href="./assests/css/style.css" rel="stylesheet" />
-    <link
-      rel="shortcut icon"
-      href="./assests/images/logos/logo-gold.png"
-      type="image/x-icon"
-    />
   </head>
   <body>
-    <!-- Navbar (copy from index.html) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-main">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img
             src="./assests/images/logos/logo-gold.png"
             height="80"
-            alt="website logo"
+            alt="logo"
           />
         </a>
         <button
@@ -54,9 +48,9 @@
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">
-                <i class="fa fa-user-circle fa-2x"></i>
-              </a>
+              <a class="nav-link" href="profile.html"
+                ><i class="fa fa-user-circle fa-2x"></i
+              ></a>
             </li>
           </ul>
         </div>
@@ -64,12 +58,12 @@
     </nav>
 
     <main class="container my-5 pt-5">
-      <!-- Event Detail Card -->
+      <!-- Event Image -->
       <div class="card">
         <div class="card-body">
           <h1 id="event-title" class="card-title"></h1>
           <div class="row">
-            <div class="col-12 col-md-6 mx-auto text-center mb-4">
+            <div class="col-12 col-md-4 mx-auto text-center mb-4">
               <img id="event-img" class="img-fluid rounded" alt="…" />
             </div>
           </div>
@@ -79,11 +73,10 @@
       </div>
 
       <!-- Comments Section -->
-      <section class="mt-5">
+      <section>
         <h3>Comments</h3>
         <div id="comments-list" class="mb-4"></div>
 
-        <!-- Comment Form -->
         <form id="commentForm">
           <div class="mb-3">
             <label for="comment" class="form-label">Add a comment</label>
@@ -100,8 +93,6 @@
       </section>
     </main>
 
-    <!-- Newsletter & Footer (optional—you can copy from your index.html if you like) -->
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -113,26 +104,27 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assests/js/app.js"></script>
-
-    <!-- Event‐Details Logic -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
-        const year = parseInt(params.get("id"), 10);
+        let id = parseInt(params.get("id"), 10);
+        // if treating id as year, uncomment below:
+        // id = id - 1930;
 
-        // convert year → zero-based index
-        const idx = year - 1930;
         const events = getEvents();
-        const e = events[idx];
-
+        const e = events[id];
         if (!e) {
           document.body.innerHTML =
             '<p class="text-center mt-5">Event not found.</p>';
           return;
         }
 
-        document.getElementById("event-title").textContent = e.title;
+        // Populate image
         document.getElementById("event-img").src = e.img;
+        document.getElementById("event-img").alt = e.title;
+
+        // Populate text
+        document.getElementById("event-title").textContent = e.title;
         document.getElementById("event-date").textContent = e.date;
         document.getElementById("event-desc").textContent = e.description;
 
@@ -151,7 +143,7 @@
           comContainer.append(div);
         });
 
-        // Handle new comment
+        // Comment form
         const form = document.getElementById("commentForm");
         if (!currentUser()) {
           form.innerHTML =
