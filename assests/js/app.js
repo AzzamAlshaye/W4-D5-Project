@@ -79,15 +79,15 @@ function addComment(eventId, text) {
 
 // — UI INIT —
 // Timeline on index.html
-if (document.getElementById("timeline")) {
-  const items = getEvents().map((e, i) => ({
-    id: i,
-    content: `<a href="event.html?id=${i}">${e.title}</a>`,
-    start: e.date,
-  }));
-  // Using vis.js for timeline display (no data fetch)
-  new vis.Timeline(document.getElementById("timeline"), items, {});
-}
+// if (document.getElementById("timeline")) {
+//   const items = getEvents().map((e, i) => ({
+//     id: i,
+//     content: `<a href="event.html?id=${i}">${e.title}</a>`,
+//     start: e.date,
+// }));
+// Using vis.js for timeline display (no data fetch)
+//   new vis.Timeline(document.getElementById("timeline"), items, {});
+// }
 
 // — NAVBAR STATE —
 document.addEventListener("DOMContentLoaded", () => {
