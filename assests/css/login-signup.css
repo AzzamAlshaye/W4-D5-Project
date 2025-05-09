@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* hide any scrollbars */
+  background-color: #efe3cd;
+}
+
+/* light background for contrast */
+
+.input-theme {
+  /* if you want to override input styles, e.g.: */
+  border-radius: 0.375rem;
+}
+
+.btn-primary {
+  /* ensure consistent padding */
+  padding: 0.75rem;
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: #f3f1ee;
+}
+/* default for all screens: narrow card */

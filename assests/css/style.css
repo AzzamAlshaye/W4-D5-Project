@@ -4,10 +4,35 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-
   background-color: #efe3cd;
   margin-top: 5rem;
 }
+
+/* colors/themes start */
+
+/* btns */
+.btn-main {
+  background-color: #c78f00;
+  color: #000000; /* Dark Teal */
+  border: 1px solid #aa7a00;
+  padding: 0.45rem 1.5rem 0.35rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.2s;
+}
+.btn-main:hover {
+  background-color: #caa13a; /* Burnt Orange */
+  color: #0f0f0f; /* Cream */
+}
+
+.input-theme {
+  background-color: #f2eee8; /* Off-White */
+  border: 1px solid #bb9f58;
+  /* :active {
+   
+  } */
+}
+
+/* colors/themes end */
 
 /* nav css start  */
 /* 1. Navbar background */
@@ -44,18 +69,6 @@ body {
 }
 
 /* 5. Search button */
-.btn-search {
-  background-color: #c78f00;
-  color: #000000; /* Dark Teal */
-  border: 1px solid #aa7a00;
-  padding: 0.45rem 1.5rem 0.35rem;
-  border-radius: 0.3rem;
-  transition: background-color 0.2s;
-}
-.btn-search:hover {
-  background-color: #caa13a; /* Burnt Orange */
-  color: #0f0f0f; /* Cream */
-}
 
 /* nav css end  */
 
