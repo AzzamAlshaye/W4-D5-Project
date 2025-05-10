@@ -57,7 +57,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="#welcomeSection"
+                href="#heroCarousel"
                 >Home</a
               >
             </li>
@@ -113,185 +113,177 @@
       <!-- Container wrapper -->
     </nav>
 
-    <section class="h-100" id="welcomeSection">
-      <!-- Hero Slideshow Section -->
-      <section
-        id="heroCarousel"
-        class="carousel slide full-minus-header"
-        data-bs-ride="carousel"
+    <!-- Hero Slideshow Section -->
+    <section
+      id="heroCarousel"
+      class="carousel slide full-minus-header"
+      data-bs-ride="carousel"
+    >
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <!-- Slides wrapper -->
+      <div class="carousel-inner">
+        <!-- ─── Slide 1 ───────────────────────────────────────────────────────── -->
+        <div class="carousel-item active">
+          <div class="d-flex flex-column flex-md-row align-items-center h-100">
+            <!-- LEFT: Text -->
+            <div class="col-12 col-md-5 text-center px-4 py-2">
+              <h1 class="display-4 fw-bold">
+                Welcome to the Computer Timeline
+              </h1>
+              <p class="lead">
+                “Step into the story of technology’s greatest moments.”
+              </p>
+            </div>
+            <!-- RIGHT: Image -->
+            <div class="col-12 col-md-6 p-0">
+              <img
+                src="./assests/images/timeline-art.webp"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Innovation"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Slide 2 ───────────────────────────────────────────────────────── -->
+        <div class="carousel-item">
+          <div class="d-flex flex-column flex-md-row align-items-center h-100">
+            <div class="col-12 col-md-5 text-center px-4 py-2">
+              <h1 class="display-4 fw-bold">Discover Innovations</h1>
+              <p class="lead">
+                “From vacuum tubes to quantum leaps—explore every step.”
+              </p>
+            </div>
+            <div class="col-12 col-md-6 p-0">
+              <img
+                src="./assests/images/timeline-art2.webp"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Mission"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Slide 3 ───────────────────────────────────────────────────────── -->
+        <div class="carousel-item">
+          <div class="d-flex flex-column flex-md-row align-items-center h-100">
+            <div class="col-12 col-md-5 text-center px-4 py-2">
+              <h1 class="display-4 fw-bold">Join the Journey</h1>
+              <p class="lead">
+                “Be part of our community learning and sharing every milestone.”
+              </p>
+            </div>
+            <div class="col-12 col-md-6 p-0">
+              <img
+                src="./assests/images/timeline-art3.webp"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Journey"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+        style="width: 8rem"
       >
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="0"
-            class="active"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide-to="2"
-          ></button>
-        </div>
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+        style="width: 8rem"
+      >
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </section>
+    <section id="timeline-container full-minus-header" class="container my-5">
+      <div
+        id="decadeCarousel"
+        class="carousel slide"
+        data-bs-ride="false"
+        data-bs-interval="false"
+      >
+        <!-- decade dots (populated by JS) -->
+        <div class="carousel-indicators"></div>
 
-        <!-- Slides wrapper -->
-        <div class="carousel-inner">
-          <!-- ─── Slide 1 ───────────────────────────────────────────────────────── -->
-          <div class="carousel-item active">
-            <div
-              class="d-flex flex-column flex-md-row align-items-center h-100"
-            >
-              <!-- LEFT: Text -->
-              <div class="col-12 col-md-5 text-center px-4 py-2">
-                <h1 class="display-4 fw-bold">
-                  Welcome to the Computer Timeline
-                </h1>
-                <p class="lead">
-                  “Step into the story of technology’s greatest moments.”
-                </p>
-              </div>
-              <!-- RIGHT: Image -->
-              <div class="col-12 col-md-6 p-0">
-                <img
-                  src="./assests/images/timeline-art.webp"
-                  class="img-fluid w-100 h-100 object-fit-cover"
-                  alt="Innovation"
-                />
-              </div>
-            </div>
-          </div>
+        <!-- slides (populated by JS) -->
+        <div class="carousel-inner"></div>
 
-          <!-- ─── Slide 2 ───────────────────────────────────────────────────────── -->
-          <div class="carousel-item">
-            <div
-              class="d-flex flex-column flex-md-row align-items-center h-100"
-            >
-              <div class="col-12 col-md-5 text-center px-4 py-2">
-                <h1 class="display-4 fw-bold">Discover Innovations</h1>
-                <p class="lead">
-                  “From vacuum tubes to quantum leaps—explore every step.”
-                </p>
-              </div>
-              <div class="col-12 col-md-6 p-0">
-                <img
-                  src="./assests/images/timeline-art2.webp"
-                  class="img-fluid w-100 h-100 object-fit-cover"
-                  alt="Mission"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- ─── Slide 3 ───────────────────────────────────────────────────────── -->
-          <div class="carousel-item">
-            <div
-              class="d-flex flex-column flex-md-row align-items-center h-100"
-            >
-              <div class="col-12 col-md-5 text-center px-4 py-2">
-                <h1 class="display-4 fw-bold">Join the Journey</h1>
-                <p class="lead">
-                  “Be part of our community learning and sharing every
-                  milestone.”
-                </p>
-              </div>
-              <div class="col-12 col-md-6 p-0">
-                <img
-                  src="./assests/images/timeline-art3.webp"
-                  class="img-fluid w-100 h-100 object-fit-cover"
-                  alt="Journey"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Controls -->
+        <!-- Prev/Next arrows underneath -->
         <button
           class="carousel-control-prev"
           type="button"
-          data-bs-target="#heroCarousel"
+          data-bs-target="#decadeCarousel"
           data-bs-slide="prev"
-          style="width: 8rem"
         >
-          <span class="carousel-control-prev-icon"></span>
+          <span class="carousel-control-prev-icon arrow-color"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
           class="carousel-control-next"
           type="button"
-          data-bs-target="#heroCarousel"
+          data-bs-target="#decadeCarousel"
           data-bs-slide="next"
-          style="width: 8rem"
         >
-          <span class="carousel-control-next-icon"></span>
+          <span class="carousel-control-next-icon arrow-color"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </section>
-      <section id="timeline-container" class="container my-5">
-        <div
-          id="decadeCarousel"
-          class="carousel slide"
-          data-bs-ride="false"
-          data-bs-interval="false"
-        >
-          <!-- decade dots (populated by JS) -->
-          <div class="carousel-indicators"></div>
+      </div>
 
-          <!-- slides (populated by JS) -->
-          <div class="carousel-inner"></div>
-
-          <!-- Prev/Next arrows underneath -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#decadeCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon arrow-color"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#decadeCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon arrow-color"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-
-        <!-- DETAIL CARD -->
-        <div id="yearDetailCard" class="card mt-2 mx-auto">
-          <div class="row g-0">
-            <!-- full width on xs, 4/12 on md+ -->
-            <div class="col-12 col-md-4 year-image-wrap">
-              <img
-                id="yearDetailImg"
-                class="img-fluid rounded-start year-image"
-                alt=""
-              />
-            </div>
-            <!-- full width on xs, 8/12 on md+ -->
-            <div class="col-12 col-md-8 d-flex align-items-center">
-              <div class="card-body">
-                <h5 id="yearDetailTitle" class="card-title"></h5>
-                <p id="yearDetailDesc" class="card-text"></p>
-                <a href="event.html" target="_blank" id="moreDetailsLink"
-                  ><button class="btn-main">more details</button></a
-                >
-              </div>
+      <!-- DETAIL CARD -->
+      <div id="yearDetailCard" class="card mt-2 mx-auto">
+        <div class="row g-0">
+          <!-- full width on xs, 4/12 on md+ -->
+          <div class="col-12 col-md-4 year-image-wrap">
+            <img
+              id="yearDetailImg"
+              class="img-fluid rounded-start year-image"
+              alt=""
+            />
+          </div>
+          <!-- full width on xs, 8/12 on md+ -->
+          <div class="col-12 col-md-8 d-flex align-items-center">
+            <div class="card-body">
+              <h5 id="yearDetailTitle" class="card-title"></h5>
+              <p id="yearDetailDesc" class="card-text"></p>
+              <a href="event.html" target="_blank" id="moreDetailsLink"
+                ><button class="btn-main">more details</button></a
+              >
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
+
     <!-- NavBar -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <a class="navbar-brand" href="index.html">Time Machine</a>
@@ -311,7 +303,7 @@
     </nav> -->
 
     <!-- Newsletter Section -->
-    <section class="py-5 newsletter-section full-minus-header">
+    <section class="py-5 newsletter-section">
       <div class="container">
         <div class="row align-items-center">
           <!-- Text Column -->
