@@ -17,7 +17,6 @@ h3 {
   font-family: "Orbitron", sans-serif;
 }
 
-/* in your main stylesheet */
 .full-minus-header {
   height: calc(100vh - 100px);
   /* optional centering */
@@ -45,8 +44,6 @@ h3 {
 .input-theme {
   background-color: #f5eee5; /* Off-White */
   border: 1px solid #bba97c;
-  /* :active {
-  } */
 }
 
 /* colors/themes end */
@@ -199,19 +196,14 @@ h3 {
 }
 /* card img  */
 .year-image-wrap {
-  /* fix the height and hide any overflow */
   height: 15rem;
   overflow: hidden;
 }
 
 .year-image {
-  /* make the img fill the container
-     (100% width, 100% height) */
   width: 100%;
   height: 100%;
-  /* cover: scale & crop to fill without distortion */
   object-fit: contain;
-  /* center the cropping area */
   object-position: center center;
 }
 

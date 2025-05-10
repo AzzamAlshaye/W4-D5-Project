@@ -151,7 +151,7 @@
           list.append(li);
         });
 
-        // Add event form (unchanged)
+        // Add event form
         document
           .getElementById("addEventForm")
           .addEventListener("submit", (ev) => {
@@ -167,7 +167,6 @@
           });
       });
 
-      // make sure deleteEvent is in scope
       function deleteEvent(index) {
         const events = getEvents();
         events.splice(index, 1);

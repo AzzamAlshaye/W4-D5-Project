@@ -65,14 +65,24 @@
           </ul>
 
           <!-- Search form -->
-          <form class="d-flex input-group w-auto me-lg-5">
+          <form
+            id="searchForm"
+            class="d-flex input-group w-auto me-lg-5 position-relative"
+          >
             <input
+              id="searchInput"
               type="search"
               class="form-control"
-              placeholder="Type query"
+              placeholder="Type year or keyword"
               aria-label="Search"
+              autocomplete="off"
             />
-            <button class="btn-main" type="button">Search</button>
+            <button id="searchButton" class="btn-main" type="submit">
+              Search
+            </button>
+
+            <!-- Dropdown menu; we'll populate it via JS -->
+            <ul id="searchDropdown" class="dropdown-menu w-100"></ul>
           </form>
 
           <!-- Login/Signup or User -->
