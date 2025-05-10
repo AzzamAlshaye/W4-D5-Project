@@ -31,7 +31,6 @@
   >
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-main">
-      <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="#">
@@ -54,6 +53,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left links -->
@@ -72,48 +72,52 @@
             <li class="nav-item">
               <a class="nav-link" href="#about-us">About us</a>
             </li>
-
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Recently Added</a>
-            </li> -->
           </ul>
-          <!-- Left links -->
 
           <!-- Search form -->
-          <form class="d-flex input-group w-auto">
+          <form class="d-flex input-group w-auto me-lg-5">
             <input
               type="search"
               class="form-control"
               placeholder="Type query"
               aria-label="Search"
             />
-            <a href="#"
-              ><button class="btn-main" type="button">Search</button></a
-            >
+            <button class="btn-main" type="button">Search</button>
           </form>
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item d-none" id="nav-user">
-              <a class="nav-link" href="profile.html"></a>
-            </li>
-            <!-- Navbar dropdown -->
-            <li class="nav-item dropdown"></li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link"
-                href="profile.html"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-dropdown-init
-                aria-expanded="false"
+
+          <!-- Login/Signup or User -->
+          <ul
+            class="navbar-nav mb-2 mb-lg-0 d-flex flex-row flex-wrap gap-3 gap-lg-4 mt-2 mt-lg-0 align-items-center"
+          >
+            <!-- Login button -->
+            <li class="nav-item" id="nav-login">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="window.location.href='login.html'"
               >
-                <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
-              </a>
+                Login
+              </button>
             </li>
+
+            <!-- Sign Up button -->
+            <li class="nav-item" id="nav-signup">
+              <button
+                type="button"
+                class="btn btn-light"
+                onclick="window.location.href='signup.html'"
+              >
+                Sign Up
+              </button>
+            </li>
+
+            <!-- Profile display (hidden by default) -->
+            <li class="nav-item d-none" id="nav-user"></li>
           </ul>
         </div>
-        <!-- Collapsible wrapper -->
+        <!-- /.navbar-collapse -->
       </div>
-      <!-- Container wrapper -->
+      <!-- /.container-fluid -->
     </nav>
     <!-- NavBar -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">

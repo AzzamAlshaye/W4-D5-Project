@@ -72,16 +72,26 @@ function deleteComment(eventId, commentIdx) {
 // — NAVBAR STATE —
 document.addEventListener("DOMContentLoaded", () => {
   const user = currentUser();
+
+  const loginLink = document.getElementById("nav-login");
+  const signupLink = document.getElementById("nav-signup");
+  const navUser = document.getElementById("nav-user");
+
   if (user) {
-    const loginLink = document.getElementById("nav-login");
-    const signupLink = document.getElementById("nav-signup");
-    if (loginLink) loginLink.classList.add("d-none");
-    if (signupLink) signupLink.classList.add("d-none");
-    const navUser = document.getElementById("nav-user");
-    if (navUser) {
-      navUser.querySelector("a").textContent = user;
-      navUser.classList.remove("d-none");
-    }
+    loginLink?.classList.add("d-none");
+    signupLink?.classList.add("d-none");
+
+    navUser.innerHTML = `
+        <a class="nav-link d-flex align-items-center" href="profile.html">
+          <i class="fa fa-user-circle fa-2x me-2" aria-hidden="true"></i>
+          <span class="fs-6">${user}</span>
+        </a>
+      `;
+    navUser.classList.remove("d-none");
+  } else {
+    loginLink?.classList.remove("d-none");
+    signupLink?.classList.remove("d-none");
+    navUser?.classList.add("d-none");
   }
 });
 
