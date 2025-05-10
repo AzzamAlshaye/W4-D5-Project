@@ -112,6 +112,23 @@
       </div>
       <!-- Container wrapper -->
     </nav>
+    <!-- NavBar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="index.html">Time Machine</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a id="nav-login" class="nav-link" href="login.html">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-signup" class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item d-none" id="nav-user">
+            <a class="nav-link" href="profile.html"></a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
 
     <!-- Hero Slideshow Section -->
     <section
@@ -236,82 +253,69 @@
     </section>
 
     <!-- timeline section  -->
-    <section id="timeline-container full-minus-header" class="container my-5">
-      <div
-        id="decadeCarousel"
-        class="carousel slide"
-        data-bs-ride="false"
-        data-bs-interval="false"
-      >
-        <!-- decade dots (populated by JS) -->
-        <div class="carousel-indicators"></div>
-
-        <!-- slides (populated by JS) -->
-        <div class="carousel-inner"></div>
-
-        <!-- Prev/Next arrows underneath -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#decadeCarousel"
-          data-bs-slide="prev"
+    <section
+      id="timeline-section"
+      class="container min-vh-100 d-flex flex-column align-items-center full-minus-header"
+    >
+      <div id="timeline-container">
+        <div
+          id="decadeCarousel"
+          class="carousel slide"
+          data-bs-ride="false"
+          data-bs-interval="false"
         >
-          <span class="carousel-control-prev-icon arrow-color"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#decadeCarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon arrow-color"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+          <!-- decade dots (populated by JS) -->
+          <div class="carousel-indicators"></div>
 
-      <!-- DETAIL CARD -->
-      <div id="yearDetailCard" class="card mt-2 mx-auto">
-        <div class="row g-0">
-          <!-- full width on xs, 4/12 on md+ -->
-          <div class="col-12 col-md-4 year-image-wrap">
-            <img
-              id="yearDetailImg"
-              class="img-fluid rounded-start year-image"
-              alt=""
-            />
-          </div>
-          <!-- full width on xs, 8/12 on md+ -->
-          <div class="col-12 col-md-8 d-flex align-items-center">
-            <div class="card-body">
-              <h5 id="yearDetailTitle" class="card-title"></h5>
-              <p id="yearDetailDesc" class="card-text"></p>
-              <a href="event.html" target="_blank" id="moreDetailsLink"
-                ><button class="btn-main">more details</button></a
-              >
+          <!-- slides (populated by JS) -->
+          <div class="carousel-inner"></div>
+
+          <!-- Prev/Next arrows underneath -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#decadeCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon arrow-color"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#decadeCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon arrow-color"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- DETAIL CARD -->
+        <div id="yearDetailCard" class="card mt-2 mx-auto">
+          <div class="row g-0">
+            <!-- full width on xs, 4/12 on md+ -->
+            <div class="col-12 col-md-4 year-image-wrap">
+              <img
+                id="yearDetailImg"
+                class="img-fluid rounded-start year-image"
+                alt=""
+              />
+            </div>
+            <!-- full width on xs, 8/12 on md+ -->
+            <div class="col-12 col-md-8 d-flex align-items-center">
+              <div class="card-body">
+                <h5 id="yearDetailTitle" class="card-title"></h5>
+                <p id="yearDetailDesc" class="card-text"></p>
+                <a href="event.html" target="_blank" id="moreDetailsLink"
+                  ><button class="btn-main">more details</button></a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- NavBar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <a class="navbar-brand" href="index.html">Time Machine</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a id="nav-login" class="nav-link" href="login.html">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a id="nav-signup" class="nav-link" href="signup.html">Sign Up</a>
-          </li>
-          <li class="nav-item d-none" id="nav-user">
-            <a class="nav-link" href="profile.html"></a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
 
     <!-- Newsletter Section -->
     <section class="py-5 newsletter-section">

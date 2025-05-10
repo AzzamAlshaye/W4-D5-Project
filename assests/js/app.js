@@ -429,7 +429,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (idx === 0) slide.classList.add("active");
 
     const wrapper = document.createElement("div");
-    wrapper.classList.add("years-wrapper", "d-flex", "gap-4", "flex-wrap");
+    wrapper.classList.add(
+      "years-wrapper",
+      "d-flex",
+      "gap-2",
+      "flex-wrap",
+      "justify-content-center"
+    );
 
     // • Ten year-pills
     for (let y = startYear; y < startYear + 10; y++) {
