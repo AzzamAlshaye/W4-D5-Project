@@ -288,19 +288,89 @@ document.addEventListener("DOMContentLoaded", () => {
     shortDesc:
       "Photoshop is released. Created by brothers John and Thomas Knoll, Photoshop was an image editing program and the most popular software program published by Adobe Systems. Thomas, while earning a PhD at the University of Michigan, had created an early version of the program in 1987, and John saw a practical use for it as a special effects staff member at Industrial Light & Magic.",
   };
-  yearData[1983] = {
-    title: "CD-ROM",
-    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1983.cdrom.jpg",
-    desc: "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984 was Grolier´s Electronic Encyclopedia, which came out in 1985. The 9 million words in the encyclopedia only took up 12 percent of the available space. The same year, computer and electronics companies worked together to set a standard for the disks so any computer would be able to access the information.",
+  yearData[1993] = {
+    title: "Doom is released",
+    img: "https://images.computerhistory.org/timeline/timeline_graphics.games_1993.Doom.jpg",
+    desc: "An immersive first-person shooter-style game, Doom becomes popular on many different platforms. Initially distributed via USENET newsgroups, Doom attracted a massive following. Doom players were also among the first to customize the game’s levels and appearance though ‘modding.’ Some criticized the level of violence portrayed in Doom, and it was cited as a prime reason for US Congressional hearings on video game violence in 1995. Doom spawned several sequels and a 2005 film. and Jurassic Park released Director Steven Spielberg's story of resurrected dinosaurs, Jurassic Park, becomes the highest-grossing film to date. Based on a novel by Michael Crichton, Jurassic Park told the story of a group of visitors to an island where dinosaurs are unleashed to run amok in an uncompleted amusement park. To create realistic-looking dinosaurs, Spielberg's team combined animatronics, puppetry, and cutting-edge computer animation.",
     shortDesc:
-      "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984.",
+      "An immersive first-person shooter-style game, Doom becomes popular on many different platforms. Initially distributed via USENET newsgroups, Doom attracted a massive following. Doom players were also among the first to customize the game’s levels and appearance though ‘modding.’.",
   };
-  yearData[1983] = {
-    title: "CD-ROM",
-    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_1983.cdrom.jpg",
-    desc: "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984 was Grolier´s Electronic Encyclopedia, which came out in 1985. The 9 million words in the encyclopedia only took up 12 percent of the available space. The same year, computer and electronics companies worked together to set a standard for the disks so any computer would be able to access the information.",
+  yearData[1996] = {
+    title: "3dfx begins selling Voodoo Graphics chips",
+    img: "https://images.computerhistory.org/timeline/timeline_graphics.games_1996.voodoo.jpg",
+    desc: "The demand for high-quality video cards for personal computers grows throughout the 1990s as game companies create games with more complex audio-visual requirements. Founded by three former Silicon Graphics employees, 3dfx designed chipsets to be used in graphics cards. Early success came in the form of arcade games using the Voodoo system, including hits like San Francisco Rush and Wayne Gretzky's 3D Ice Hockey. A failed attempted partnership with Sega to provide graphics cards for their Dreamcast game console, along with improved 3D graphics cards, led to the decline of 3dfx, which eventually sold all its intellectual property to Nvidia.",
     shortDesc:
-      "Able to hold 550 megabytes of pre-recorded data, CD-ROMs grow out of music Compact Disks (CDs). The CD was developed by Sony and Philips in 1982 for distributing music. The first general-interest CD-ROM product released after Philips and Sony announced the CD-ROM format in 1984.",
+      "The demand for high-quality video cards for personal computers grows throughout the 1990s as game companies create games with more complex audio-visual requirements. Founded by three former Silicon Graphics employees, 3dfx designed chipsets to be used in graphics cards.",
+  };
+  yearData[1999] = {
+    title: "The Matrix released",
+    img: "https://images.computerhistory.org/timeline/timeline_popularculture_1999.matrix.jpg",
+    desc: "Telling the story of Neo, a programmer who becomes a cyberspace messiah, The Matrix combines a cyberpunk setting, dystopian philosophy, and hyper-fast cinematic action. The Matrix also featured cutting edge computer-generated visual effects, and popularized 'bullet-time' - a multi-camera technique where the camera appears to move at normal speed while the action filmed appears slowed. The Matrix was added to the U.S. National Film Registry in 2012.",
+    shortDesc:
+      "Telling the story of Neo, a programmer who becomes a cyberspace messiah, The Matrix combines a cyberpunk setting, dystopian philosophy, and hyper-fast cinematic action. The Matrix also featured cutting edge computer-generated visual effects, and popularized 'bullet-time'.",
+  };
+  yearData[2000] = {
+    title: "Sony releases the PlayStation 2",
+    img: "https://images.computerhistory.org/timeline/timeline_graphics.games_2000.ps2.jpg",
+    desc: "The PlayStation 2 (PS2) represents a significant change in the concept of game consoles. The PS2 allowed for DVDs to be played as well as game disks, making it more of an entertainment console than a game console. Many consumers bought the PS2 for its DVD player alone, since the PS2 was cheaper than stand-alone DVD players. In turn, this greatly increased consumer adoption of the DVD format. Over more than ten years in active production, the PlayStation 2 has sold more than a hundred and fifty million units, making it one of the most successful game systems ever released. and USB Flash drive USB Flash drives are introduced. Sometimes referred to as jump drives or memory sticks, these drives consisted of flash memory encased in a small form factor container with a USB interface. They could be used for data storage and in the backing up and transferring of files between various devices. They were faster and had greater data capacity than earlier storage media. Also, they could not be scratched like optical discs and were resilient to magnetic erasure, unlike floppy disks. Drives for floppy disks and optical discs faded in popularity for desktop PCs and laptops in favor of USB ports after flash drives were introduced.",
+    shortDesc:
+      "The PlayStation 2 (PS2) represents a significant change in the concept of game consoles. The PS2 allowed for DVDs to be played as well as game disks, making it more of an entertainment console than a game console. Many consumers bought the PS2 for its DVD player alone.",
+  };
+  yearData[2003] = {
+    title: "Blu-ray optical disc",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_2003.blu-ray.jpg",
+    desc: "Developed by a technology industry consortium, the Blu-ray optical disc is released. It was intended to be the successor to the DVD, and was designed to store high definition video at 1080p, while older DVDs were only capable of 480p resolution. The disc was named for the relatively short wavelength blue laser that reads the data on the disc, which was capable of reading data stored at a higher density compared to the red laser used for reading DVDs. A brief storage format battle ensued between Blu-ray and HD DVD, a format that was being supported in an effort spearheaded by Toshiba. Blu-ray ultimately prevailed.",
+    shortDesc:
+      "Developed by a technology industry consortium, the Blu-ray optical disc is released. It was intended to be the successor to the DVD, and was designed to store high definition video at 1080p, while older DVDs were only capable of 480p resolution.",
+  };
+  yearData[2006] = {
+    title: "Amazon Web Services Launches Cloud-Based Services",
+    img: "https://images.computerhistory.org/timeline/timeline_memorystorage_2006.amazoncloud.jpg",
+    desc: "Amazon Web Services is launched. It introduced a number of web services, including Amazon Elastic Cloud 2 (EC2) and Amazon Simple Storage Service (S3). EC2 allowed users to rent virtual time on the cloud to scale server capacity quickly and efficiently while only paying for what was used. Use of the cloud eliminates the need for a company to maintain a complex computing infrastructure on their own. Additionally, it saved space and hassle in the form of less onsite server room square footage. S3 was a cloud-based file hosting service that charged users monthly for the amount of data stored and for the bandwidth of transferring data. Similar services, like Google Drive, followed suit and created their own proprietary services.",
+    shortDesc:
+      "Amazon Web Services is launched. It introduced a number of web services, including Amazon Elastic Cloud 2 (EC2) and Amazon Simple Storage Service (S3). EC2 allowed users to rent virtual time on the cloud to scale server capacity quickly and efficiently while only paying for what was used.",
+  };
+  yearData[2008] = {
+    title: "Bitcoin",
+    img: "https://images.computerhistory.org/timeline/timeline_popularculture_2009_bitcoin.jpg",
+    desc: "In 2008, “Satoshi Nakamoto,” likely a pseudonym, publishes Bitcoin: A Peer-to-Peer Electronic Cash System, describing the use of peer-to-peer networks to generate a “crypto-currency.” In the Bitcoin system, users run software that searches for blocks of data, the discovery of which reward the users with Bitcoins. The transaction is recorded on the system though user information is private. These can then be used online much like cash in the real world. Nakamoto 'mines' the first Bitcoins in January 2009 and a year later a user used them to order two pizzas. Bitcoins’ value exploded in November 2013 before a gradual devaluation. Bitcoin's anonymous nature, along with the electronic nature of the currency, has led to its adoption by some criminal organizations.",
+    shortDesc:
+      "In 2008, “Satoshi Nakamoto,” likely a pseudonym, publishes Bitcoin: A Peer-to-Peer Electronic Cash System, describing the use of peer-to-peer networks to generate a “crypto-currency.” In the Bitcoin system, users run software that searches for blocks of data, the discovery of which reward the users with Bitcoins. The transaction is recorded on the system though user information is private.",
+  };
+  yearData[2009] = {
+    title: "Minecraft is introduced",
+    img: "https://images.computerhistory.org/timeline/timeline_graphics.games_2009.minecraft.jpg",
+    desc: "Initially developed by Swedish game designer Markus “Notch” Persson, Minecraft allows players to build towers and play challenges. The game, which could be played in either survival or creative mode, has received many awards from the international gaming press. An enormous variety of physical systems and machines can also be built in the Minecraft environment, taking the game far beyond its intended use as a simple entertainment platform into a flexible and creative building system for modeling real-world processes or things. Users have built entire computers, cities, and even planets out of Minecraft components.",
+    shortDesc:
+      "Initially developed by Swedish game designer Markus “Notch” Persson, Minecraft allows players to build towers and play challenges. The game, which could be played in either survival or creative mode, has received many awards from the international gaming press.",
+  };
+  yearData[2010] = {
+    title: "Apple Retina Display",
+    img: "https://images.computerhistory.org/timeline/timeline_computers_2012_appleretina.jpg",
+    desc: "Since the release of the Macintosh in 1984, Apple has placed emphasis on high-resolution graphics and display technologies. In 2012, Apple introduced the Retina display for the MacBook Pro laptop and iPad tablet. With a screen resolution of up to 400 pixels-per-inch (PPI), Retina displays approached the limit of pixel visibility to the human eye. The display also used In Plane Switching (IPS) technology, which allowed for a wider viewing angle and improved color accuracy. The Retina display became standard on most of the iPad, iPhone, MacBook, and Apple Watch product lines. and the Apple iPad is released Since the release of the Macintosh in 1984, Apple has placed emphasis on high-resolution graphics and display technologies. In 2012, Apple introduced the Retina display for the MacBook Pro laptop and iPad tablet. With a screen resolution of up to 400 pixels-per-inch (PPI), Retina displays approached the limit of pixel visibility to the human eye. The display also used In Plane Switching (IPS) technology, which allowed for a wider viewing angle and improved color accuracy. The Retina display became standard on most of the iPad, iPhone, MacBook, and Apple Watch product lines.",
+    shortDesc:
+      "Since the release of the Macintosh in 1984, Apple has placed emphasis on high-resolution graphics and display technologies. In 2012, Apple introduced the Retina display for the MacBook Pro laptop and iPad tablet. With a screen resolution of up to 400 pixels-per-inch (PPI), Retina displays approached the limit of pixel visibility to the human eye. The display also used In Plane Switching (IPS) technology, which allowed for a wider viewing angle and improved color accuracy.",
+  };
+  yearData[2013] = {
+    title: "The Stable Release of Microsoft Office 365 is Unveiled",
+    img: "https://images.computerhistory.org/timeline/timeline_sw.languages_2013_office365.jpg",
+    desc: "An updated Microsoft Office 365 is announced. It was a subscription-based software product. Microsoft’s Word, Excel, OneNote, PowerPoint, Outlook, Access, and Publisher were all available in packages for a monthly or annual subscription. Also included with a subscription was 1 TB of cloud storage on Microsoft’s One Drive (formerly Skydrive). Home, personal, university, business, and enterprise subscription plans were made available for a wide range of users. Microsoft’s change to a subscription model was not unique: Apple, Adobe, IBM and many other large software and technology companies adopted this model as well.",
+    shortDesc:
+      "An updated Microsoft Office 365 is announced. It was a subscription-based software product. Microsoft’s Word, Excel, OneNote, PowerPoint, Outlook, Access, and Publisher were all available in packages for a monthly or annual subscription.",
+  };
+  yearData[2015] = {
+    title: "Gates Joins Musk, Hawking in Expressing Fear of AI",
+    img: "https://images.computerhistory.org/timeline/timeline_ai.robotics_2015_gates.jpg",
+    desc: "Microsoft co-founder Bill Gates joins a number of prominent tech gurus and scientists in revealing his thoughts on the potentially dangerous effects and unintended consequences of artificial intelligence on human civilization. Previously, Elon Musk, Stephen Hawking, and others had expressed similar sentiments. Those on the other side of the debate felt artificial intelligence would usher in an era of unprecedented human achievement, aided by the “minds” of humanity’s artificial brethren. While Gates and others felt that in the short-term intelligent machines would benefit mankind, they foresaw a future where more advanced super-intelligent machines could pose a grave threat to human existence.",
+    shortDesc:
+      "Microsoft co-founder Bill Gates joins a number of prominent tech gurus and scientists in revealing his thoughts on the potentially dangerous effects and unintended consequences of artificial intelligence on human civilization. Previously, Elon Musk, Stephen Hawking, and others had expressed similar sentiments.",
+  };
+  yearData[2018] = {
+    title: "RockStar Released Red Dead Redemtion 2",
+    img: "https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png?w=440",
+    desc: "Red Dead Redemption 2 (RDR2) is celebrated not just as an immersive gaming experience, but also as a technological masterpiece. Developed by Rockstar Games and released in 2018, RDR2 sets a high benchmark in the gaming industry due to its advanced technical accomplishments. The game leverages the powerful Rockstar Advanced Game Engine (RAGE), which enables the rendering of vast open worlds filled with intricate details. This technology allows for realistic lighting, dynamic weather systems, and breathtakingly detailed environments, creating one of the most authentic open-world experiences available in gaming today. From a graphical standpoint, RDR2 utilizes advanced techniques such as volumetric lighting, which creates realistic sunlight filtering through clouds and trees, enhancing the visual depth and realism. High-resolution textures and detailed character models further contribute to the game's lifelike visuals. One standout feature is the impressive animation system powered by motion capture technology, resulting in fluid character movements and realistic interactions with the environment. Characters move and react naturally, significantly elevating immersion.",
+    shortDesc:
+      "Red Dead Redemption 2 (RDR2) is celebrated not just as an immersive gaming experience, but also as a technological masterpiece. Developed by Rockstar Games and released in 2018, RDR2 sets a high benchmark in the gaming industry due to its advanced technical accomplishments.",
   };
 
   // ▶️ **SEED** localStorage “events” if it’s empty
