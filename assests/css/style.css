@@ -125,7 +125,7 @@ body {
 
 .card {
   border-radius: 1rem;
-  background-color: #f3f1ee;
+  background-color: #efe9de;
 }
 /* 4) each year pill */
 .year-item {
@@ -146,6 +146,23 @@ body {
   background-color: #c78f00;
   border-color: #aa7a00;
   color: #000000;
+}
+/* card img  */
+.year-image-wrap {
+  /* fix the height and hide any overflow */
+  height: 15rem;
+  overflow: hidden;
+}
+
+.year-image {
+  /* make the img fill the container
+     (100% width, 100% height) */
+  width: 100%;
+  height: 100%;
+  /* cover: scale & crop to fill without distortion */
+  object-fit: contain;
+  /* center the cropping area */
+  object-position: center center;
 }
 
 /* 5) move built-in arrows underneath */

@@ -148,15 +148,19 @@
         <div id="yearDetailCard" class="card mt-2 mx-auto">
           <div class="row g-0">
             <!-- full width on xs, 4/12 on md+ -->
-            <div class="col-12 col-md-3">
-              <img id="yearDetailImg" class="img-fluid rounded-start" alt="" />
+            <div class="col-12 col-md-4 year-image-wrap">
+              <img
+                id="yearDetailImg"
+                class="img-fluid rounded-start year-image"
+                alt=""
+              />
             </div>
             <!-- full width on xs, 8/12 on md+ -->
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 d-flex align-items-center">
               <div class="card-body">
                 <h5 id="yearDetailTitle" class="card-title"></h5>
                 <p id="yearDetailDesc" class="card-text"></p>
-                <a href="event.html" id="moreDetailsLink"
+                <a href="event.html" target="_blank" id="moreDetailsLink"
                   ><button class="btn-main">more details</button></a
                 >
               </div>

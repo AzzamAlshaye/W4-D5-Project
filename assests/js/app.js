@@ -372,6 +372,13 @@ document.addEventListener("DOMContentLoaded", () => {
     shortDesc:
       "Red Dead Redemption 2 (RDR2) is celebrated not just as an immersive gaming experience, but also as a technological masterpiece. Developed by Rockstar Games and released in 2018, RDR2 sets a high benchmark in the gaming industry due to its advanced technical accomplishments.",
   };
+  yearData[2019] = {
+    title: "5G Rollout Begins",
+    img: "https://sg-media.apjonlinecdn.com/magefan_blog/What_is_5G_A_Guide_to_The_Future_of_Mobile_Connectivity.png",
+    desc: "On April 3, 2019, South Korea became the first country to launch a nationwide 5G network. Major telecom operators—SK Telecom, KT Corporation, and LG Uplus—initiated services, marking a significant milestone in global telecommunications . The launch was strategically advanced by a few hours to precede Verizon's U.S. rollout, underscoring the competitive nature of 5G deployment . ABC News+1The Guardian+1 The Guardian+2Lifewire+2ABC News+2 South Korea's early adoption was bolstered by substantial investments in infrastructure and a collaborative approach among carriers. By 2020, KT Corporation had extended 5G coverage to over 80 cities, aiming to provide 90% of mobile users with access by 2026",
+    shortDesc:
+      "On April 3, 2019, South Korea became the first country to launch a nationwide 5G network. Major telecom operators—SK Telecom, KT Corporation, and LG Uplus—initiated services, marking a significant milestone in global telecommunications . The launch was strategically advanced by a few hours to precede Verizon's U.S. rollout, underscoring the competitive nature of 5G deployment .",
+  };
 
   // ▶️ **SEED** localStorage “events” if it’s empty
   if (!getData("events") || getData("events").length === 0) {
@@ -387,7 +394,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setData("events", evts);
   }
   // 2️⃣ Which years are disabled, and which one starts active?
-  const disabledYears = [1930, 1931, 1932, 1935, 1936, 1938 /* …etc… */];
+  const disabledYears = [
+    1930, 1931, 1932, 1935, 1936, 1938, 1944, 1945, 1946, 1948, 1949, 1951,
+    1953, 1955, 1957, 1959, 1961, 1963, 1964, 1965, 1967, 1968, 1971, 1972,
+    1974, 1975, 1977, 1978, 1981, 1982, 1984, 1985, 1987, 1988, 1991, 1992,
+    1993, 1994, 1995, 1997, 1998, 2001, 2002, 2004, 2005, 2007, 2011, 2012,
+    2014, 2016, 2017,
+  ];
   const initialActiveYear = 1933;
 
   // 3️⃣ Define the decades (1930s–2010s)
