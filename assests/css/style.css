@@ -1,13 +1,22 @@
 /* assets/css/styles.css */
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #efe3cd;
-  margin-top: 10rem;
 }
 
+/* in your main stylesheet */
+.full-minus-header {
+  height: calc(100vh - 64px);
+  /* optional centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* colors/themes start */
 
 /* btns */
@@ -97,6 +106,25 @@ body {
 }
 #decadeCarousel .carousel-indicators button {
   background-color: #e8cf9a;
+}
+/* Make each slide span most of the viewport height */
+#heroCarousel .carousel-item {
+  height: 70vh;
+}
+
+/* Ensure our flex container fills the slide */
+#heroCarousel .carousel-item > .d-flex {
+  height: 100%;
+}
+
+/* Responsive text sizing */
+#heroCarousel h1 {
+  font-size: 2rem;
+}
+
+/* Stretch images without distortion */
+.object-fit-cover {
+  object-fit: cover;
 }
 
 #timeline-container {
@@ -323,4 +351,10 @@ body {
 }
 .footer-theme .fab:hover {
   color: #b18d30; /* Mustard */
+}
+
+@media (min-width: 768px) {
+  #heroCarousel h1 {
+    font-size: 3rem;
+  }
 }
