@@ -89,6 +89,14 @@ h3 {
   background-color: #eec26358;
   border-radius: 1rem;
 }
+#searchDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
 /* 5. Search button */
 
 /* nav css end  */

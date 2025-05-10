@@ -408,10 +408,66 @@ document.addEventListener("DOMContentLoaded", () => {
     1930, 1931, 1932, 1935, 1936, 1938, 1944, 1945, 1946, 1948, 1949, 1951,
     1953, 1955, 1957, 1959, 1961, 1963, 1964, 1965, 1967, 1968, 1971, 1972,
     1974, 1975, 1977, 1978, 1981, 1982, 1984, 1985, 1987, 1988, 1991, 1992,
-    1993, 1994, 1995, 1997, 1998, 2001, 2002, 2004, 2005, 2007, 2011, 2012,
-    2014, 2016, 2017,
+    1994, 1995, 1997, 1998, 2001, 2002, 2004, 2005, 2007, 2011, 2012, 2014,
+    2016, 2017,
   ];
   const initialActiveYear = 1933;
+  // 3️⃣ **Search initialization** *in the same scope*, so it can see the above yearData:
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  const searchDropdown = document.getElementById("searchDropdown");
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.trim().toLowerCase();
+    updateDropdown(q);
+  });
+  document.addEventListener("click", (e) => {
+    if (!searchForm.contains(e.target)) hideDropdown();
+  });
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const first = searchDropdown.querySelector("a");
+    if (first) window.location.href = first.href;
+  });
+
+  function updateDropdown(query) {
+    searchDropdown.innerHTML = "";
+    if (!query) return hideDropdown();
+
+    const matches = Object.entries(yearData)
+      .filter(([year, data]) => {
+        // 1) Skip disabled years
+        if (disabledYears.includes(Number(year))) return false;
+
+        // 2) Only keep if it matches the query
+        return (
+          year.includes(query) ||
+          data.title.toLowerCase().includes(query) ||
+          data.desc.toLowerCase().includes(query)
+        );
+      })
+      .slice(0, 10);
+
+    if (!matches.length) return hideDropdown();
+
+    matches.forEach(([year, data]) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+      <a
+        class="dropdown-item"
+        href="event.html?id=${encodeURIComponent(year)}"
+      >
+        <strong>${year}</strong> — ${data.title}
+      </a>`;
+      searchDropdown.append(li);
+    });
+    searchDropdown.classList.add("show");
+  }
+
+  function hideDropdown() {
+    searchDropdown.classList.remove("show");
+    searchDropdown.innerHTML = "";
+  }
 
   // 3️⃣ Define the decades (1930s–2010s)
   const decades = Array.from({ length: 9 }, (_, i) => 1930 + i * 10);
