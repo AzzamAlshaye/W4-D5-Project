@@ -8,6 +8,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
   background-color: #efe3cd;
 }
 h1,
@@ -18,15 +19,13 @@ h3 {
 
 /* in your main stylesheet */
 .full-minus-header {
-  height: 100vh;
+  height: calc(100vh - 100px);
   /* optional centering */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.vh-section {
-  height: 90vh;
-}
+
 /* colors/themes start */
 
 /* btns */
