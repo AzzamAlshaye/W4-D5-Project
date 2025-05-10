@@ -43,10 +43,9 @@ h3 {
 }
 
 .input-theme {
-  background-color: #f2eee8; /* Off-White */
-  border: 1px solid #bb9f58;
+  background-color: #f5eee5; /* Off-White */
+  border: 1px solid #bba97c;
   /* :active {
-   
   } */
 }
 
@@ -141,6 +140,7 @@ h3 {
   border: 1px solid #f0e3cd;
   background-color: #f2eadc;
   border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 /* 3) style the scrollable year row */
 .years-wrapper {
@@ -163,6 +163,11 @@ h3 {
 .card {
   border-radius: 1rem;
   background-color: #efe9de9f;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+.comments-list {
+  background-color: #f3ecdc;
+  border-radius: 1.2rem;
 }
 /* 4) each year pill */
 .year-item {

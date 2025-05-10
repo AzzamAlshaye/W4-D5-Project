@@ -67,7 +67,7 @@
       <!-- /.container-fluid -->
     </nav>
 
-    <div class="container my-5 pt-5">
+    <div class="container my-5 pt-5 d-flex flex-column">
       <h2>Your Profile</h2>
       <p>Username: <strong id="profile-username"></strong></p>
 
@@ -75,18 +75,23 @@
       <form id="addEventForm" class="mb-4" style="max-width: 600px">
         <div class="mb-3">
           <label class="form-label">Title</label>
-          <input name="title" class="form-control" required />
+          <input name="title" class="form-control input-theme" required />
         </div>
         <div class="mb-3">
           <label class="form-label">Date</label>
-          <input name="date" type="date" class="form-control" required />
+          <input
+            name="date"
+            type="date"
+            class="form-control input-theme"
+            required
+          />
         </div>
         <div class="mb-3">
           <label class="form-label">Image URL</label>
           <input
             name="img"
             type="url"
-            class="form-control"
+            class="form-control input-theme"
             placeholder="https://..."
             required
           />
@@ -95,7 +100,7 @@
           <label class="form-label">Description</label>
           <textarea
             name="description"
-            class="form-control"
+            class="form-control input-theme"
             rows="3"
             required
           ></textarea>
@@ -126,7 +131,8 @@
         getEvents().forEach((evt, idx) => {
           if (evt.user !== user) return;
           const li = document.createElement("li");
-          li.className = "list-group-item d-flex align-items-center";
+          li.className =
+            "list-group-item d-flex align-items-center input-theme";
           li.innerHTML = `
         <img src="${evt.img}" alt="" class="img-thumbnail me-3" style="width:60px; height:auto;" />
         <div>

@@ -22,5 +22,6 @@ body {
 .card {
   border-radius: 1rem;
   background-color: #f3f1ee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 /* default for all screens: narrow card */
