@@ -1,12 +1,19 @@
 /* assets/css/styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #efe3cd;
+}
+h1,
+h2,
+h3 {
+  font-family: "Orbitron", sans-serif;
 }
 
 /* in your main stylesheet */
